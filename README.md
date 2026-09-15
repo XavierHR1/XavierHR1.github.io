@@ -33,6 +33,10 @@
     </nav>
     <nav>
       <h2>Projectes</h2>
+      <h3>Projectes curriculars</h3>
+      <h4>Projecte 1</h4>
+      <hr>
+      <p>Lorem ipsum...</p>
     </nav>
   </body>
 </html>
