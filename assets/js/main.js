@@ -1,5 +1,5 @@
 import { education } from "./data/education.js";
-import { projectFilters, projects } from "./data/projects.js";
+import { projectFilters, projects } from "./data/projects.js?v=51508fb";
 import { renderEducation } from "./ui/education.js";
 import { initNavigation } from "./ui/navigation.js";
 import { initProjects } from "./ui/projects.js";
