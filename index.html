@@ -22,7 +22,7 @@
       </a>
 
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation" data-menu-toggle>
-        <span class="sr-only">Obrir el menú</span>
+        <span class="sr-only" data-menu-label>Obrir el menú</span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
       </button>
@@ -114,9 +114,11 @@
             <p class="section-number">03 · Projectes</p>
             <h2>Una selecció del que estic construint.</h2>
           </div>
+          <p>Filtra per tipus o tecnologia per trobar ràpidament el que t'interessa.</p>
         </div>
         <div class="filters" role="group" aria-label="Filtrar projectes" data-project-filters></div>
-        <div class="projects-grid" data-project-list aria-live="polite"></div>
+        <p class="filter-status" data-project-status aria-live="polite"></p>
+        <div id="project-list" class="projects-grid" data-project-list aria-live="polite"></div>
         <noscript><p class="empty-state">Activa JavaScript per veure els projectes.</p></noscript>
       </div>
     </section>

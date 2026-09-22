@@ -28,6 +28,7 @@ const createProjectCard = (project) => {
 export const initProjects = ({ projects, filters }) => {
   const filterContainer = document.querySelector("[data-project-filters]");
   const projectList = document.querySelector("[data-project-list]");
+  const projectStatus = document.querySelector("[data-project-status]");
 
   if (!filterContainer || !projectList) return;
 
@@ -39,10 +40,14 @@ export const initProjects = ({ projects, filters }) => {
     projectList.innerHTML = visibleProjects.length
       ? visibleProjects.map(createProjectCard).join("")
       : '<p class="empty-state">Encara no hi ha projectes en aquesta categoria.</p>';
+
+    if (projectStatus) {
+      projectStatus.textContent = `${visibleProjects.length} ${visibleProjects.length === 1 ? "projecte trobat" : "projectes trobats"}.`;
+    }
   };
 
   filterContainer.innerHTML = filters.map((filter, index) => `
-    <button class="filter-button${index === 0 ? " is-active" : ""}" type="button" data-filter="${filter.id}" aria-pressed="${index === 0}">
+    <button class="filter-button${index === 0 ? " is-active" : ""}" type="button" data-filter="${filter.id}" aria-controls="project-list" aria-pressed="${index === 0}">
       ${filter.label}
     </button>
   `).join("");

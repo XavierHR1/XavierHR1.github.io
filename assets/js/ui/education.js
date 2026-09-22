@@ -8,7 +8,9 @@ export const renderEducation = (education) => {
       <div>
         <h3>${item.title}</h3>
         <p>${item.institution}</p>
-        ${item.certificateUrl ? `<a class="text-link" href="${item.certificateUrl}" target="_blank" rel="noreferrer">Veure certificat <span aria-hidden="true">↗</span></a>` : ""}
+        ${item.certificateUrl
+          ? `<a class="text-link" href="${item.certificateUrl}" target="_blank" rel="noreferrer">Veure certificat <span aria-hidden="true">↗</span></a>`
+          : `<span class="education-note">Certificat no publicat</span>`}
       </div>
     </article>
   `).join("");

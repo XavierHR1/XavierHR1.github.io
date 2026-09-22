@@ -7,13 +7,22 @@ export const projectFilters = [
   { id: "python", label: "Python" },
 ];
 
-// Edita aquest array per afegir, eliminar o actualitzar projectes.
 export const projects = [
   {
-    title: "Projecte Java",
+    title: "Portafoli web modular",
+    type: "Personal",
+    status: "En desenvolupament",
+    description: "Portafoli estàtic amb HTML, CSS i JavaScript natius, organitzat per dades i components d'interfície.",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    categories: ["personal"],
+    demoUrl: "",
+    repositoryUrl: "https://github.com/XavierHR1/XavierHR1.github.io",
+  },
+  {
+    title: "Projecte acadèmic amb Java",
     type: "Curricular",
-    status: "En preparació",
-    description: "Espai reservat per documentar un projecte acadèmic: repte, decisions tècniques i resultat.",
+    status: "En desenvolupament",
+    description: "Projecte de DAM orientat a practicar la programació orientada a objectes i la resolució de problemes.",
     technologies: ["Java"],
     categories: ["curricular", "java"],
     demoUrl: "",
@@ -22,18 +31,18 @@ export const projects = [
   {
     title: "Aplicació web amb dades",
     type: "Curricular",
-    status: "En preparació",
-    description: "Espai reservat per presentar una aplicació web connectada a una base de dades.",
+    status: "En desenvolupament",
+    description: "Pràctica de desenvolupament web i persistència de dades amb una separació clara entre interfície i lògica.",
     technologies: ["PHP", "SQL"],
     categories: ["curricular", "php"],
     demoUrl: "",
     repositoryUrl: "",
   },
   {
-    title: "Eina amb Python",
+    title: "Eina d'automatització amb Python",
     type: "Personal",
-    status: "En preparació",
-    description: "Espai reservat per explicar una eina personal, l'automatització que resol i els aprenentatges.",
+    status: "En desenvolupament",
+    description: "Eina personal per automatitzar una tasca repetitiva i consolidar l'ús de Python per resoldre problemes.",
     technologies: ["Python"],
     categories: ["personal", "python"],
     demoUrl: "",

@@ -8,6 +8,7 @@
   --accent: #7357ff;
   --accent-dark: #5338e6;
   --mint: #61e6bb;
+  --focus: #0f766e;
   --max-width: 1140px;
   --radius-sm: 12px;
   --radius-md: 22px;
@@ -40,7 +41,7 @@ h1 { margin-bottom: 1.5rem; font-size: clamp(3rem, 7.4vw, 6.5rem); }
 h2 { margin-bottom: 1.5rem; max-width: 760px; font-size: clamp(2.25rem, 4.8vw, 4.25rem); }
 h3 { font-size: 1.35rem; }
 
-:focus-visible { outline: 3px solid var(--mint); outline-offset: 4px; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; }
 
 .container { width: min(calc(100% - 2.5rem), var(--max-width)); margin-inline: auto; }
 .section { padding: clamp(5rem, 10vw, 9rem) 0; scroll-margin-top: 5rem; }

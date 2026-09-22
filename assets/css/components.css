@@ -46,6 +46,7 @@
 .filters { display: flex; flex-wrap: wrap; gap: .65rem; margin-bottom: 1.5rem; }
 .filter-button { padding: .58rem .9rem; color: var(--ink-soft); background: transparent; border: 1px solid var(--line); border-radius: 99px; cursor: pointer; font-size: .8rem; font-weight: 800; }
 .filter-button:hover, .filter-button.is-active { color: white; background: var(--ink); border-color: var(--ink); }
+.filter-status { min-height: 1.5em; margin: 0 0 1rem; color: var(--ink-soft); font-size: .84rem; }
 .project-card { display: flex; min-height: 330px; flex-direction: column; }
 .project-meta { display: flex; align-items: center; justify-content: space-between; gap: .75rem; margin-bottom: 2rem; color: var(--accent-dark); font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 .project-status { color: var(--ink-soft); }
@@ -62,6 +63,7 @@
 .education-date { color: var(--accent-dark); font-size: .75rem; font-weight: 800; text-transform: uppercase; }
 .education-item h3 { margin-bottom: .55rem; }
 .education-item p { margin-bottom: .5rem; color: var(--ink-soft); }
+.education-note { color: var(--ink-soft); font-size: .82rem; }
 .contact-section { color: white; background: var(--ink); }
 .contact-card { display: flex; align-items: end; justify-content: space-between; gap: 3rem; }
 .contact-card .section-number { color: var(--mint); }
