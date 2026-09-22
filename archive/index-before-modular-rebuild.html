@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portafoli personal de Xavier Hijós, estudiant de Desenvolupament d'Aplicacions Multiplataforma.">
+    <title>Portafoli de Xavier Hijós</title>
+
+    <style>
+
+        /* =========================
+           CONFIGURACIÓ GENERAL
+        ========================== */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f5f7fa;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        a {
+            color: #2563eb;
+        }
+
+        a:focus,
+        button:focus {
+            outline: 3px solid #f59e0b;
+            outline-offset: 3px;
+        }
+
+
+        /* =========================
+           ACCESSIBILITAT
+        ========================== */
+
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 20px;
+
+            background-color: white;
+            color: black;
+
+            padding: 10px 15px;
+
+            z-index: 1000;
+        }
+
+        .skip-link:focus {
+            top: 20px;
+        }
+
+
+        /* =========================
+           CAPÇALERA
+        ========================== */
+
+        header {
+            background-color: #0f172a;
+            color: white;
+        }
+
+        .capcalera {
+            max-width: 1200px;
+
+            margin: auto;
+
+            padding: 25px 30px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            gap: 30px;
+
+            flex-wrap: wrap;
+        }
+
+        .capcalera h1 {
+            font-size: 24px;
+        }
+
+        .menu ul {
+            display: flex;
+            gap: 20px;
+
+            list-style: none;
+
+            flex-wrap: wrap;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .menu a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* =========================
+           PRESENTACIÓ
+        ========================== */
+
+        .presentacio {
+            background-color: #1e3a8a;
+            color: white;
+
+            padding: 80px 30px;
+        }
+
+        .presentacio-contingut {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .presentacio h2 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .presentacio p {
+            max-width: 900px;
+
+            font-size: 18px;
+
+            margin-bottom: 15px;
+
+            color: #e2e8f0;
+        }
+
+        .botons-presentacio {
+            margin-top: 30px;
+
+            display: flex;
+            gap: 15px;
+
+            flex-wrap: wrap;
+        }
+
+        .boto {
+            display: inline-block;
+
+            padding: 12px 22px;
+
+            border-radius: 7px;
+
+            text-decoration: none;
+            font-weight: bold;
+
+            background-color: white;
+            color: #1e3a8a;
+        }
+
+        .boto:hover {
+            background-color: #e2e8f0;
+        }
+
+
+        /* =========================
+           SECCIONS
+        ========================== */
+
+        main section {
+            max-width: 1200px;
+
+            margin: auto;
+
+            padding: 70px 30px;
+        }
+
+        section h2 {
+            font-size: 32px;
+
+            margin-bottom: 25px;
+        }
+
+        section h3 {
+            margin-bottom: 15px;
+        }
+
+
+        /* =========================
+           SOBRE MI
+        ========================== */
+
+        .sobre-mi p {
+            max-width: 900px;
+            margin-bottom: 15px;
+        }
+
+
+        /* =========================
+           HABILITATS
+        ========================== */
+
+        .llista-habilitats {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+            list-style: none;
+        }
+
+        .llista-habilitats li {
+            background-color: #e2e8f0;
+
+            padding: 10px 18px;
+
+            border-radius: 20px;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           CONTACTE
+        ========================== */
+
+        .contacte ul {
+            list-style: none;
+        }
+
+        .contacte li {
+            margin-bottom: 10px;
+        }
+
+
+        /* =========================
+           ÍNDEX DE PROJECTES
+        ========================== */
+
+        .index-projectes {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(280px, 1fr));
+
+            gap: 30px;
+        }
+
+        .index-projectes article {
+            background-color: white;
+
+            padding: 25px;
+
+            border-radius: 10px;
+
+            box-shadow:
+                0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .index-projectes ul {
+            margin-left: 20px;
+        }
+
+        .index-projectes li {
+            margin-bottom: 8px;
+        }
+
+
+        /* =========================
+           FILTRES
+        ========================== */
+
+        .filtres {
+            display: flex;
+
+            gap: 10px;
+
+            flex-wrap: wrap;
+
+            margin-bottom: 35px;
+        }
+
+        .filtre {
+            border: 2px solid #1d4ed8;
+
+            background-color: white;
+            color: #1d4ed8;
+
+            padding: 10px 18px;
+
+            border-radius: 20px;
+
+            cursor: pointer;
+
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .filtre:hover,
+        .filtre.actiu {
+            background-color: #1d4ed8;
+            color: white;
+        }
+
+
+        /* =========================
+           PROJECTES
+        ========================== */
+
+        .llista-projectes {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(300px, 1fr));
+
+            gap: 25px;
+        }
+
+        .projecte {
+            background-color: white;
+
+            padding: 25px;
+
+            border-radius: 10px;
+
+            box-shadow:
+                0 3px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .projecte h3 {
+            margin-bottom: 5px;
+        }
+
+        .tipus-projecte {
+            color: #64748b;
+
+            font-size: 14px;
+
+            margin-bottom: 15px;
+        }
+
+        .projecte p {
+            margin-bottom: 15px;
+        }
+
+        .tecnologies {
+            font-weight: bold;
+            color: #475569;
+        }
+
+        .enllacos-projecte {
+            margin-top: 20px;
+
+            display: flex;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+        }
+
+        .enllacos-projecte a {
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           FORMACIÓ
+        ========================== */
+
+        .llista-formacio {
+            display: grid;
+            gap: 20px;
+        }
+
+        .formacio {
+            background-color: white;
+
+            padding: 25px;
+
+            border-left: 5px solid #2563eb;
+
+            border-radius: 8px;
+        }
+
+        .formacio p {
+            margin-top: 5px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            background-color: #0f172a;
+            color: white;
+
+            text-align: center;
+
+            padding: 35px 20px;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width: 650px) {
+
+            .capcalera {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .menu ul {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .presentacio h2 {
+                font-size: 32px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- Enllaç d'accessibilitat -->
+
+    <a href="#contingut" class="skip-link">
+        Anar al contingut principal
+    </a>
+
+
+
+    <!-- =========================
+         CAPÇALERA
+    ========================== -->
+
+    <header>
+
+        <div class="capcalera">
+
+            <h1>Portafoli de Xavier Hijós</h1>
+
+            <nav
+                class="menu"
+                aria-label="Navegació principal"
+            >
+
+                <ul>
+
+                    <li>
+                        <a href="#sobre-mi">
+                            Sobre mi
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#habilitats">
+                            Habilitats
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#projectes">
+                            Projectes
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#formacio">
+                            Formació
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#contacte">
+                            Contacte
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <main id="contingut">
+
+
+        <!-- =========================
+             PRESENTACIÓ
+        ========================== -->
+
+        <section class="presentacio">
+
+            <div class="presentacio-contingut">
+
+                <h2>
+                    Xavier Hijós
+                </h2>
+
+                <p>
+                    Estudiant del Grau Superior de
+                    Desenvolupament d'Aplicacions
+                    Multiplataforma (DAM).
+                </p>
+
+                <div class="botons-presentacio">
+
+                    <a
+                        href="#projectes"
+                        class="boto"
+                    >
+                        Veure projectes
+                    </a>
+
+                    <a
+                        href="https://github.com/XavierHR1/XavierHR1.github.io"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="boto"
+                    >
+                        GitHub
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             SOBRE MI
+        ========================== -->
+
+        <section
+            id="sobre-mi"
+            class="sobre-mi"
+        >
+
+            <h2>Sobre mi</h2>
+
+            <p>
+                Soc estudiant del Grau Superior de
+                Desenvolupament d'Aplicacions Multiplataforma
+                (DAM) a l'Institut Baix Camp de Reus i
+                actualment estic fent pràctiques curriculars
+                a Nexoria Holdings, una start-up situada a
+                Sant Cugat del Vallès.
+            </p>
+
+            <p>
+                Prèviament, he tingut l'oportunitat d'estudiar
+                a la Universitat Autònoma de Barcelona, on
+                he pogut participar en l'organització
+                d'esdeveniments com la MEMEnginy UAB,
+                la Qiskit Hackathon BCN i diverses hackathons
+                relacionades amb continguts d'Enginyeria
+                Informàtica i Enginyeria de Dades.
+            </p>
+
+        </section>
+
+
+
+        <!-- =========================
+             HABILITATS
+        ========================== -->
+
+        <section id="habilitats">
+
+            <h2>Habilitats</h2>
+
+            <h3>Llenguatges de programació</h3>
+
+            <ul class="llista-habilitats">
+
+                <li>Java</li>
+
+                <li>Python</li>
+
+                <li>PHP</li>
+
+                <li>SQL</li>
+
+                <li>C</li>
+
+                <li>C#</li>
+
+                <li>Visual .NET</li>
+
+            </ul>
+
+            <h3>Llenguatges de marques</h3>
+            <ul class="llista-habilitats">
+
+                <li>HTML</li>
+
+                <li>CSS</li>
+
+                <li>XML</li>
+
+                <li>JSON</li>
+
+                <li>JavaScript</li>
+
+                <li>DOM</li>
+
+            </ul>
+
+        </section>
+
+
+
+        <!-- =========================
+             ÍNDEX DE PROJECTES
+        ========================== -->
+
+        <section id="index">
+
+            <h2>Índex de projectes</h2>
+
+            <div class="index-projectes">
+
+
+                <!-- PROJECTES CURRICULARS -->
+
+                <article>
+
+                    <h3>
+                        Projectes curriculars
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            <a href="#projecte-curricular-1">
+                                Projecte curricular 1
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#projecte-curricular-2">
+                                Projecte curricular 2
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#projecte-curricular-3">
+                                Projecte curricular 3
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </article>
+
+
+                <!-- PROJECTES EXTRACURRICULARS -->
+
+                <article>
+
+                    <h3>
+                        Projectes extracurriculars
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            <a href="#projecte-extra-1">
+                                Projecte extracurricular 1
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#projecte-extra-2">
+                                Projecte extracurricular 2
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             PROJECTES
+        ========================== -->
+
+        <section id="projectes">
+
+            <h2>Projectes</h2>
+
+
+            <!-- FILTRES -->
+
+            <div
+                class="filtres"
+                aria-label="Filtres de projectes"
+            >
+
+                <button
+                    class="filtre actiu"
+                    data-filtre="tots"
+                    aria-pressed="true"
+                >
+                    Tots
+                </button>
+
+                <button
+                    class="filtre"
+                    data-filtre="curricular"
+                    aria-pressed="false"
+                >
+                    Curriculars
+                </button>
+
+                <button
+                    class="filtre"
+                    data-filtre="extracurricular"
+                    aria-pressed="false"
+                >
+                    Extracurriculars
+                </button>
+
+                <button
+                    class="filtre"
+                    data-filtre="java"
+                    aria-pressed="false"
+                >
+                    Java
+                </button>
+
+                <button
+                    class="filtre"
+                    data-filtre="php"
+                    aria-pressed="false"
+                >
+                    PHP
+                </button>
+
+                <button
+                    class="filtre"
+                    data-filtre="python"
+                    aria-pressed="false"
+                >
+                    Python
+                </button>
+
+            </div>
+
+
+            <div class="llista-projectes">
+
+
+                <!-- PROJECTE CURRICULAR 1 -->
+
+                <article
+                    id="projecte-curricular-1"
+                    class="projecte"
+                    data-categories="curricular java"
+                >
+
+                    <h3>
+                        Projecte curricular 1
+                    </h3>
+
+                    <p class="tipus-projecte">
+                        Projecte curricular
+                    </p>
+
+                    <hr>
+
+                    <br>
+
+                    <p>
+                        Aquí pots explicar l'objectiu del
+                        projecte, què havies de desenvolupar
+                        i quina solució vas implementar.
+                    </p>
+
+                    <p class="tecnologies">
+                        Tecnologies: Java
+                    </p>
+
+                    <div class="enllacos-projecte">
+
+                        <a
+                            href="#"
+                            target="_blank"
+                        >
+                            Veure projecte
+                        </a>
+
+                        <a
+                            href="#"
+                            target="_blank"
+                        >
+                            Veure codi a GitHub
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PROJECTE CURRICULAR 2 -->
+
+                <article
+                    id="projecte-curricular-2"
+                    class="projecte"
+                    data-categories="curricular php"
+                >
+
+                    <h3>
+                        Projecte curricular 2
+                    </h3>
+
+                    <p class="tipus-projecte">
+                        Projecte curricular
+                    </p>
+
+                    <hr>
+
+                    <br>
+
+                    <p>
+                        Descripció del projecte.
+                    </p>
+
+                    <p class="tecnologies">
+                        Tecnologies: PHP · SQL
+                    </p>
+
+                    <div class="enllacos-projecte">
+
+                        <a href="#">
+                            Veure projecte
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PROJECTE CURRICULAR 3 -->
+
+                <article
+                    id="projecte-curricular-3"
+                    class="projecte"
+                    data-categories="curricular python"
+                >
+
+                    <h3>
+                        Projecte curricular 3
+                    </h3>
+
+                    <p class="tipus-projecte">
+                        Projecte curricular
+                    </p>
+
+                    <hr>
+
+                    <br>
+
+                    <p>
+                        Descripció del projecte.
+                    </p>
+
+                    <p class="tecnologies">
+                        Tecnologies: Python
+                    </p>
+
+                </article>
+
+
+
+                <!-- PROJECTE EXTRACURRICULAR 1 -->
+
+                <article
+                    id="projecte-extra-1"
+                    class="projecte"
+                    data-categories="extracurricular java"
+                >
+
+                    <h3>
+                        Projecte extracurricular 1
+                    </h3>
+
+                    <p class="tipus-projecte">
+                        Projecte extracurricular
+                    </p>
+
+                    <hr>
+
+                    <br>
+
+                    <p>
+                        Descripció del projecte personal
+                        o extracurricular.
+                    </p>
+
+                    <p class="tecnologies">
+                        Tecnologies: Java
+                    </p>
+
+                </article>
+
+
+
+                <!-- PROJECTE EXTRACURRICULAR 2 -->
+
+                <article
+                    id="projecte-extra-2"
+                    class="projecte"
+                    data-categories="extracurricular python"
+                >
+
+                    <h3>
+                        Projecte extracurricular 2
+                    </h3>
+
+                    <p class="tipus-projecte">
+                        Projecte extracurricular
+                    </p>
+
+                    <hr>
+
+                    <br>
+
+                    <p>
+                        Descripció del projecte personal
+                        o extracurricular.
+                    </p>
+
+                    <p class="tecnologies">
+                        Tecnologies: Python
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             FORMACIÓ I CERTIFICATS
+        ========================== -->
+
+        <section id="formacio">
+
+            <h2>
+                Formació i certificacions
+            </h2>
+
+            <div class="llista-formacio">
+
+
+                <article class="formacio">
+
+                    <h3>
+                        Grau Superior de Desenvolupament
+                        d'Aplicacions Multiplataforma
+                    </h3>
+
+                    <p>
+                        Institut Baix Camp · Reus
+                    </p>
+
+                </article>
+
+
+                <!-- Exemple de certificat -->
+
+                <article class="formacio">
+
+                    <h3>
+                        Excel TOTAL en 30 Días - Excel completo de Cero a Avanzado
+                    </h3>
+
+                    <p>
+                        Udemy · En remot
+                    </p>
+
+                    <p>
+                        <a
+                            href="certificats/certificat.pdf"
+                            target="_blank"
+                        >
+                            Veure certificat
+                        </a>
+                    </p>
+
+                </article>
+
+                <article class="formacio">
+
+                    <h3>
+                        Curso Maestro de Python: De Cero a Programador Todoterreno
+                    </h3>
+
+                    <p>
+                        Udemy · En remot
+                    </p>
+
+                    <p>
+                        <a
+                            href="certificats/certificat.pdf"
+                            target="_blank"
+                        >
+                            Veure certificat
+                        </a>
+                    </p>
+
+                </article>
+
+                <article class="formacio">
+
+                    <h3>
+                        Curso Práctico de Qt/PySide: Interfaces Gráficas con Python
+                    </h3>
+
+                    <p>
+                        Udemy · En remot
+                    </p>
+
+                    <p>
+                        <a
+                            href="certificats/certificat.pdf"
+                            target="_blank"
+                        >
+                            Veure certificat
+                        </a>
+                    </p>
+
+                </article>
+
+                <article class="formacio">
+
+                    <h3>
+                        Curso de Shell en Linux
+                    </h3>
+
+                    <p>
+                        OpenWebinars · En remot
+                    </p>
+
+                    <p>
+                        <a
+                            href="certificats/certificat.pdf"
+                            target="_blank"
+                        >
+                            Veure certificat
+                        </a>
+                    </p>
+
+                </article>
+
+                <article class="formacio">
+
+                    <h3>
+                        Reto Hacker con INS Baix Camp
+                    </h3>
+
+                    <p>
+                        Fundación Cibervoluntarios · En remot (a classe)
+                    </p>
+
+                    <p>
+                        <a
+                            href="certificats/certificat.pdf"
+                            target="_blank"
+                        >
+                            Veure certificat
+                        </a>
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             CONTACTE
+        ========================== -->
+
+        <section
+            id="contacte"
+            class="contacte"
+        >
+
+            <h2>Contacte</h2>
+
+            <ul>
+
+                <li>
+                    <strong>
+                        Correu electrònic:
+                    </strong>
+
+                    <a href="mailto:xhrullo09@gmail.com">
+                        xhrullo09@gmail.com
+                    </a>
+                </li>
+
+                <li>
+
+                    <strong>
+                        LinkedIn:
+                    </strong>
+
+                    <a
+                        href="https://www.linkedin.com/in/xhijos/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        linkedin.com/in/xhijos
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================
+         PEU DE PÀGINA
+    ========================== -->
+
+    <footer>
+
+        <p>
+            © 2026 Xavier Hijós · Portafoli personal
+        </p>
+
+    </footer>
+
+
+
+    <!-- =========================
+         JAVASCRIPT DELS FILTRES
+    ========================== -->
+
+    <script>
+
+        // Seleccionem tots els botons dels filtres.
+
+        const botons =
+            document.querySelectorAll(".filtre");
+
+
+        // Seleccionem tots els projectes.
+
+        const projectes =
+            document.querySelectorAll(".projecte");
+
+
+        botons.forEach(function(boto) {
+
+            boto.addEventListener(
+                "click",
+                function() {
+
+                    // Obtenim el filtre seleccionat.
+
+                    const filtre =
+                        boto.dataset.filtre;
+
+
+                    // Eliminem l'estat actiu
+                    // de tots els botons.
+
+                    botons.forEach(
+                        function(element) {
+
+                            element.classList.remove(
+                                "actiu"
+                            );
+
+                            element.setAttribute(
+                                "aria-pressed",
+                                "false"
+                            );
+
+                        }
+                    );
+
+
+                    // Activem el botó seleccionat.
+
+                    boto.classList.add("actiu");
+
+                    boto.setAttribute(
+                        "aria-pressed",
+                        "true"
+                    );
+
+
+                    // Recorrem tots els projectes.
+
+                    projectes.forEach(
+                        function(projecte) {
+
+                            const categories =
+                                projecte.dataset.categories
+                                    .split(" ");
+
+
+                            // Mostrem tots els projectes
+                            // si el filtre és "tots".
+
+                            if (
+                                filtre === "tots" ||
+                                categories.includes(filtre)
+                            ) {
+
+                                projecte.hidden = false;
+
+                            }
+
+                            else {
+
+                                projecte.hidden = true;
+
+                            }
+
+                        }
+                    );
+
+                }
+            );
+
+        });
+
+    </script>
+
+
+</body>
+
+</html>
