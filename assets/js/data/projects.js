@@ -10,11 +10,11 @@ export const projectFilters = [
 export const projects = [
   {
     title: "Portafoli web modular",
-    type: "Personal",
+    type: "Curricular",
     status: "En desenvolupament",
-    description: "Portafoli estàtic amb HTML, CSS i JavaScript natius, organitzat per dades i components d'interfície.",
+    description: "Portafoli web desenvolupat com a projecte intermodular per integrar estructura, estil, accessibilitat i funcionalitats amb JavaScript.",
     technologies: ["HTML", "CSS", "JavaScript"],
-    categories: ["personal"],
+    categories: ["curricular"],
     demoUrl: "",
     repositoryUrl: "https://github.com/XavierHR1/XavierHR1.github.io",
   },
